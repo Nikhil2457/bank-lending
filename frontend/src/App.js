@@ -13,7 +13,7 @@ function RequireAuth({ children }) {
   const customer = JSON.parse(localStorage.getItem('customer'));
   const location = useLocation();
   if (!customer) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
+    return <Navigate to="/landing" state={{ from: location }} replace />;
   }
   return children;
 }
