@@ -41,7 +41,7 @@ function Login() {
       localStorage.setItem('customer', JSON.stringify({ id: form.id, name: form.name }));
       setSuccess('Login successful! Redirecting...');
       setLoading(false);
-      setTimeout(() => navigate('/'), 1200);
+      setTimeout(() => navigate('/loan'), 1200);
     }, 900);
   };
 
