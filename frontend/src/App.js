@@ -13,7 +13,7 @@ function RequireAuth({ children }) {
   const customer = JSON.parse(localStorage.getItem('customer'));
   const location = useLocation();
   if (!customer) {
-    return <Navigate to="/landing" state={{ from: location }} replace />;
+    return <Navigate to="/login" state={{ from: location }} replace />;
   }
   return children;
 }
@@ -27,7 +27,8 @@ function App() {
           <Routes>
             <Route path="/landing" element={<LandingPage />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/" element={<RequireAuth><LoanForm /></RequireAuth>} />
+            <Route path="/" element={<Navigate to="/landing" replace />} />
+            <Route path="/loan" element={<RequireAuth><LoanForm /></RequireAuth>} />
             <Route path="/payment/:loanId" element={<RequireAuth><PaymentForm /></RequireAuth>} />
             <Route path="/ledger/:loanId" element={<RequireAuth><LedgerView /></RequireAuth>} />
             <Route path="/overview/:customerId" element={<RequireAuth><AccountOverview /></RequireAuth>} />

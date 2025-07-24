@@ -15,7 +15,7 @@ function Navbar() {
     <nav className="navbar">
       <Link to="/landing" className="brand">Bank Lending</Link>
       <ul className="nav-links">
-        <li><Link to="/" className={location.pathname === '/' ? 'active' : ''}>New Loan</Link></li>
+        <li><Link to="/loan" className={location.pathname === '/loan' ? 'active' : ''}>New Loan</Link></li>
         {customer && (
           <li><Link to={`/overview/${customer.id}`} className={location.pathname.startsWith('/overview') ? 'active' : ''}>Account Overview</Link></li>
         )}
